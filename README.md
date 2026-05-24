@@ -2,7 +2,7 @@
 
 A highly polished, interactive portfolio and lab notebook highlighting cybersecurity research, cloud infrastructure configurations, threat detection, incident response, and web applications.
 
-🔗 **GitHub Repository:** [github.com/msugh1/portfoilio](https://github.com/msugh1/portfoilio)
+🔗 **GitHub Repository:** [github.com/msugh1/felixdemkiir](https://github.com/msugh1/felixdemkiir)
 
 ---
 
