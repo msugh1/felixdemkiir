@@ -154,10 +154,12 @@ function Nav() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="https://drive.google.com/file/d/15CJll9LokE37rSIS91yPZ4ESxUAwMDqW/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-3 inline-flex items-center gap-2 border border-white/20 hover:border-white px-4 py-2 text-[13px] text-white transition-colors"
           >
-            Get in touch <ArrowUpRight className="w-3.5 h-3.5" />
+            View CV <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </nav>
 
