@@ -91,7 +91,7 @@ function Nav() {
           <Link to="/findings" className="text-[13px] text-white transition-colors">Findings</Link>
           <Link to="/#about" className="text-[13px] text-white/70 hover:text-white transition-colors">About</Link>
           <a
-            href="https://drive.google.com/file/d/15CJll9LokE37rSIS91yPZ4ESxUAwMDqW/view?usp=sharing"
+            href="https://drive.google.com/file/d/119fkAt46DgATxfIaGVOlPkx-4DCrxyb-/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-2 inline-flex items-center gap-2 border border-white/20 hover:border-white px-4 py-2 text-[13px] text-white transition-colors"
