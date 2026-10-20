@@ -1,3 +1,13 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+
+/* Portfolio accessibility and interaction polish */
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+::selection { background: #10b981; color: #04130d; }
+:focus-visible { outline: 2px solid #34d399; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
