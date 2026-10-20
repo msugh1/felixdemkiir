@@ -512,8 +512,8 @@ function About() {
           </div>
           <div className="md:col-span-7" style={body}>
             <p className="text-white/75 text-lg leading-relaxed">
-              I&apos;m a cybersecurity student at NUTM (BSc, 2024 to 2028) with
-              completed a technology internship at VFD Microfinance Bank, with exposure to
+              I&apos;m a cybersecurity student at NUTM (BSc, 2024–2028). I completed
+              a technology internship at VFD Microfinance Bank, gaining exposure to
               security monitoring, identity and API security, and cloud infrastructure.
               Skilled in phishing detection, network traffic analysis, and
               vulnerability identification using SIEM platforms, Wireshark,
@@ -521,12 +521,11 @@ function About() {
               cybersecurity education for young people in Nigeria.
             </p>
             <p className="mt-6 text-white/60 leading-relaxed">
-              Actively earning the Google Professional Cybersecurity Certificate
-              and holding a NITDA 3MTT Cybersecurity Certification (2025) and
-              the Hack &amp; Fix Certified Phishing Prevention Specialist
-              credential. I treat this portfolio as a working notebook — every
-              project is a question I wanted answered, every lab report a piece
-              of that answer written down.
+              I&apos;ve completed the Google Cybersecurity Professional Certificate,
+              alongside training and credentials in security fundamentals and
+              phishing prevention. I treat this portfolio as a working notebook:
+              documenting the systems I build, the incidents I investigate,
+              and what I learn from each project.
             </p>
 
             <div className="mt-10">
@@ -535,12 +534,10 @@ function About() {
               </div>
               <ul className="space-y-2.5" style={body}>
                 {[
-                  "NITDA 3MTT Cybersecurity Certification",
+                  "Google Cybersecurity Professional Certificate — Completed 2026",
                   "Microsoft SC-900: Security, Compliance & Identity Fundamentals",
+                  "NITDA 3MTT Cybersecurity Certification",
                   "Hack & Fix Certified Phishing Prevention Specialist",
-                  "Google Cybersecurity Certificate — Course 2",
-                  "Google Cybersecurity Certificate — Course 3",
-                  "Google Cybersecurity Certificate — Course 4",
                 ].map((cert) => (
                   <li key={cert} className="flex items-start gap-2.5 text-white/65 text-[14px] leading-snug">
                     <span className="mt-[6px] w-1 h-1 rounded-full bg-emerald-400 shrink-0" />
