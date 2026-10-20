@@ -280,112 +280,23 @@ function SectionHeader({ eyebrow, title, kicker }: { eyebrow: string; title: str
 
 function Projects() {
   return (
-    <section id="work" className="relative scroll-mt-20 border-t border-white/10 bg-[#0a1124]">
-      <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-10 md:py-32">
-        <SectionHeader
-          eyebrow="Selected Security Work"
-          title="Practical security, documented."
-          kicker="Network architecture, fraud analysis and cloud infrastructure—projects where I could investigate real technical problems, build working solutions and document the decisions behind them."
-        />
-
+    <section id="work" className="relative border-t border-white/10 bg-[#080f20] scroll-mt-20">
+      <div className="mx-auto max-w-[1400px] px-6 py-28 md:px-10 md:py-36">
+        <div className="mb-12 grid gap-6 md:grid-cols-12">
+          <div className="md:col-span-4"><span className="font-mono text-[11px] tracking-[.2em] uppercase text-emerald-400">01 — SELECTED WORK</span></div>
+          <div className="md:col-span-8"><h2 className="text-4xl font-medium leading-tight tracking-[-.05em] text-white md:text-6xl" style={display}>Proof in the <em className="font-light text-emerald-400">projects.</em></h2><p className="mt-6 max-w-xl leading-7 text-white/60">Security architecture, fraud analysis, and infrastructure engineering. Real implementations, with evidence you can inspect.</p></div>
+        </div>
         <div className="border-t border-white/10">
           {projects.map((p) => (
-            <article
-              key={p.name}
-              className="group border-b border-white/10 py-10 transition-colors duration-300 hover:bg-white/[0.015] md:py-14"
-            >
-              <div className="grid items-start gap-6 md:grid-cols-12 md:gap-10">
-                <span className="text-xs text-emerald-400" style={mono}>{p.no} / 03</span>
-                <div className="md:col-span-5">
-                  <h3 className="text-2xl font-medium leading-tight tracking-tight text-white md:text-4xl" style={display}>
-                    {p.name}
-                  </h3>
-                  <div className="mt-4 flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-wider text-white/50" style={mono}>
-                    <span>{p.tag}</span>
-                    <span className="h-px w-5 bg-white/20" aria-hidden="true" />
-                    <span>{p.year}</span>
-                  </div>
-                  <div className="mt-7 overflow-hidden border border-white/10 bg-[#101c2b] p-2">
-                    <img
-                      src={p.image}
-                      alt={p.imageAlt}
-                      loading="lazy"
-                      decoding="async"
-                      className="aspect-[16/9] w-full object-contain transition-transform duration-300 motion-safe:group-hover:scale-[1.02]"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col gap-5 md:col-span-5">
-                  <p className="text-[15px] leading-7 text-white/75" style={body}>{p.blurb}</p>
-                  <ul className="flex flex-wrap gap-2">
-                    {p.stack.map((tool) => (
-                      <li key={tool} className="border border-white/15 px-2.5 py-1.5 text-[10.5px] uppercase tracking-wider text-white/60" style={mono}>
-                        {tool}
-                      </li>
-                    ))}
-                  </ul>
-                  {p.name.startsWith("FraudGuard") && (
-                    <p className="border-l-2 border-emerald-400/70 pl-4 text-xs leading-6 text-white/55">
-                      Demonstration prototype; authentication and operational safeguards require further work before production use.
-                    </p>
-                  )}
-                  <div className="flex flex-wrap gap-3 pt-1">
-                    {"docsPath" in p && p.docsPath && (
-                      <Link
-                        to={p.docsPath}
-                        className="inline-flex min-h-11 items-center gap-2 bg-emerald-500 px-4 py-2.5 text-xs font-semibold text-[#04130d] transition-colors hover:bg-emerald-400"
-                      >
-                        Read case study <ArrowRight size={15} aria-hidden="true" />
-                      </Link>
-                    )}
-                    <a
-                      href={p.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex min-h-11 items-center gap-2 border border-white/25 px-4 py-2.5 text-xs text-white/80 transition-colors hover:border-emerald-400 hover:text-emerald-400"
-                    >
-                      {p.liveLabel} <ArrowUpRight size={15} aria-hidden="true" />
-                      <span className="sr-only">(opens in a new tab)</span>
-                    </a>
-                  </div>
-                </div>
-                <div className="hidden justify-end md:col-span-1 md:flex">
-                  <a href={p.href} target="_blank" rel="noopener noreferrer" aria-label={`Open ${p.name} repository in a new tab`}
-                     className="grid size-10 place-items-center border border-white/20 text-white/60 transition-colors hover:border-emerald-400 hover:bg-emerald-500 hover:text-[#04130d]">
-                    <ArrowUpRight size={18} aria-hidden="true" />
-                  </a>
-                </div>
-              </div>
+            <article key={p.name} className="group grid gap-7 border-b border-white/10 py-12 lg:grid-cols-12 lg:gap-12 lg:py-16">
+              <span className="font-mono text-xs text-emerald-400 lg:col-span-1">{p.no} / 03</span>
+              <div className="lg:col-span-5"><div className="relative overflow-hidden border border-white/10 bg-[#101d2b] p-2"><img src={p.image} alt={p.imageAlt} loading="lazy" decoding="async" className="aspect-[16/10] w-full object-contain transition-transform duration-500 motion-safe:group-hover:scale-[1.025]"/></div></div>
+              <div className="lg:col-span-6"><div className="mb-5 flex flex-wrap items-center gap-3 font-mono text-[10px] uppercase tracking-[.16em] text-emerald-400"><span>{p.tag}</span><span className="text-white/30">/</span><span className="text-white/50">{p.year}</span></div><h3 className="max-w-xl text-3xl leading-tight font-medium tracking-[-.035em] text-white md:text-4xl" style={display}>{p.name}</h3><p className="mt-5 max-w-xl leading-7 text-white/65">{p.blurb}</p><div className="mt-6 flex flex-wrap gap-2">{p.stack.map(t=><span key={t} className="border border-white/15 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-white/60">{t}</span>)}</div>{p.name.startsWith("FraudGuard")&&<p className="mt-5 border-l-2 border-emerald-400/60 pl-4 text-xs leading-6 text-white/50">Prototype: authentication and operational safeguards require further work before production use.</p>}<div className="mt-8 flex flex-wrap items-center gap-3">{"docsPath" in p && p.docsPath && <Link to={p.docsPath} className="inline-flex min-h-11 items-center gap-2 bg-emerald-500 px-5 py-3 text-xs font-semibold text-[#04130d] hover:bg-emerald-400">Read case study <ArrowUpRight size={16}/></Link>}<a href={p.href} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 border border-white/25 px-5 py-3 text-xs text-white hover:border-emerald-400 hover:text-emerald-400">View repository <ArrowUpRight size={16}/></a></div></div>
             </article>
           ))}
         </div>
-
-        <div className="mt-20 border-t border-white/10 pt-9">
-          <div className="mb-7 flex flex-wrap items-baseline justify-between gap-3">
-            <h3 className="text-xl font-medium text-white md:text-2xl" style={display}>Selected software projects</h3>
-            <span className="text-[11px] uppercase tracking-[0.16em] text-white/45" style={mono}>Beyond security</span>
-          </div>
-          <div className="grid gap-px border border-white/10 bg-white/10 md:grid-cols-2">
-            {otherProjects.map((project) => (
-              <a
-                key={project.name}
-                href={project.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex h-full flex-col bg-[#0a1124] p-6 transition-colors duration-200 hover:bg-[#101c2b] sm:p-8"
-              >
-                <span className="text-[11px] uppercase tracking-wider text-emerald-400" style={mono}>{project.category}</span>
-                <div className="mt-4 flex items-start justify-between gap-4">
-                  <h4 className="text-2xl font-medium text-white" style={display}>{project.name}</h4>
-                  <ArrowUpRight className="shrink-0 text-white/50 transition-transform duration-200 motion-safe:group-hover:-translate-y-1 motion-safe:group-hover:translate-x-1" size={20} aria-hidden="true" />
-                </div>
-                <p className="mt-3 flex-1 text-sm leading-7 text-white/65">{project.summary}</p>
-                <span className="mt-6 text-xs text-white/45">{project.tools.join(" · ")}</span>
-                <span className="sr-only">(opens in a new tab)</span>
-              </a>
-            ))}
-          </div>
-        </div>
+        <div className="mt-20 flex items-center justify-between gap-5 border-b border-white/10 pb-6"><h3 className="text-2xl font-medium text-white" style={display}>Beyond security</h3><span className="font-mono text-[10px] uppercase tracking-wider text-white/40">SOFTWARE / 02</span></div>
+        <div className="grid gap-px border-x border-b border-white/10 bg-white/10 md:grid-cols-2">{otherProjects.map(p=><a key={p.name} href={p.href} target="_blank" rel="noopener noreferrer" className="group flex flex-col bg-[#080f20] p-8 transition-colors hover:bg-[#101d2b]"><span className="font-mono text-[10px] uppercase tracking-wider text-emerald-400">{p.category}</span><div className="mt-5 flex justify-between gap-3"><h4 className="text-2xl font-medium text-white">{p.name}</h4><ArrowUpRight size={22} className="text-white/50 transition-transform motion-safe:group-hover:translate-x-1 motion-safe:group-hover:-translate-y-1"/></div><p className="mt-4 flex-1 text-sm leading-7 text-white/60">{p.summary}</p><span className="mt-7 font-mono text-[11px] text-white/40">{p.tools.join(" / ")}</span></a>)}</div>
       </div>
     </section>
   );
