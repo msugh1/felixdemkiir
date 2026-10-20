@@ -1,4 +1,4 @@
-import { ArrowUpRight, BookOpen, Cloud, Code2, GraduationCap, Network, ShieldCheck, Terminal, Users } from "lucide-react";
+import { ArrowUpRight, Cloud, GraduationCap, Network, Terminal, Users } from "lucide-react";
 
 const experience = [
   {
@@ -16,13 +16,6 @@ const experience = [
     title: "Security monitoring and research",
     body: "Used Wazuh for log-based security monitoring and supported comparative research on Nigerian fintech products.",
   },
-];
-
-const programme = [
-  "Google cybersecurity coursework on Coursera",
-  "Six-week guided learning plan",
-  "Weekly live learning sessions",
-  "Peer learning and community support",
 ];
 
 const mono = { fontFamily: '"JetBrains Mono", ui-monospace, monospace' };
@@ -91,77 +84,94 @@ export default function CareerHighlights() {
         </div>
       </section>
 
-      <section id="skillspark" aria-labelledby="skillspark-title" className="scroll-mt-20 border-t border-white/10 bg-[#070e1d]">
+      <section id="skillspark" aria-labelledby="skillspark-title" className="scroll-mt-20 border-t border-white/10 bg-[#0a1124]">
         <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-10 md:py-32">
-          <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
-            <div>
+          <div className="mb-10 grid gap-6 md:grid-cols-12">
+            <div className="md:col-span-4">
               <p className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-white/55" style={mono}>
-                <span className="h-px w-8 bg-[#00acff]" aria-hidden="true" /> Leadership and impact
+                <span className="h-px w-8 bg-emerald-400" aria-hidden="true" /> Initiative / 2026
               </p>
-              <h2 className="mt-7 text-4xl font-medium tracking-tight text-white md:text-5xl" style={display}>
-                Building access to opportunity.
-              </h2>
             </div>
-            <span className="border border-white/20 px-4 py-2 text-xs uppercase tracking-wider text-white/65" style={mono}>Founder-led initiative · 2026</span>
+            <div className="md:col-span-8">
+              <h2 className="max-w-2xl text-4xl font-medium leading-tight tracking-tight text-white md:text-5xl" style={display}>
+                Creating opportunities beyond the classroom.
+              </h2>
+              <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/60">
+                I build things that solve problems, including access to practical technology education.
+              </p>
+            </div>
           </div>
 
-          <article className="grid overflow-hidden border border-[#00acff]/25 bg-[#08162b] lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="flex flex-col justify-between px-7 py-9 sm:px-12 sm:py-14">
+          <article className="grid overflow-hidden border border-white/15 bg-[#0c1628] transition-colors duration-300 hover:border-emerald-400/40 lg:grid-cols-[1.05fr_0.95fr] motion-reduce:transition-none">
+            <div className="flex flex-col justify-between p-7 sm:p-10 lg:p-12">
               <div>
-                <div className="flex items-center gap-3">
-                  <span className="grid size-12 place-items-center rounded-xl bg-[#00acff] text-[#010033]"><GraduationCap size={25} strokeWidth={1.8} aria-hidden="true" /></span>
-                  <span className="text-[11px] uppercase tracking-[0.16em] text-[#69d1ff]" style={mono}>Cybersecurity · Education · Community</span>
-                </div>
-                <h3 id="skillspark-title" className="mt-9 text-4xl font-medium tracking-tight text-white sm:text-5xl" style={display}>SkillSpark Bootcamp</h3>
-                <p className="mt-3 text-sm font-medium text-[#69d1ff]">Founder & Programme Lead</p>
-                <p className="mt-6 max-w-xl text-[15px] leading-8 text-white/70">
-                  A free digital-skills initiative preparing a six-week online Cybersecurity Bootcamp for underserved young people in Nigeria. The learning plan uses Google's cybersecurity coursework on Coursera, weekly live sessions, and peer support.
+                <span className="inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-emerald-400" style={mono}>
+                  <GraduationCap size={18} aria-hidden="true" /> Founder-led initiative
+                </span>
+                <h3 id="skillspark-title" className="mt-8 text-4xl font-medium tracking-tight text-white sm:text-5xl" style={display}>
+                  SkillSpark Bootcamp
+                </h3>
+                <p className="mt-3 text-sm text-emerald-300">Founder & Programme Lead</p>
+                <p className="mt-7 max-w-xl text-[15px] leading-8 text-white/75">
+                  I founded SkillSpark to help underserved young people in Nigeria access practical digital-skills education. I created its identity and website, designed the first six-week online Cybersecurity Bootcamp, and developed a structured learning and community approach.
                 </p>
                 <div className="mt-7 flex flex-wrap gap-2">
-                  {["6-week learning plan", "Online", "Ages 16+", "Free programme"].map((item) => (
-                    <span key={item} className="border border-[#00acff]/25 bg-[#00acff]/5 px-3 py-2 text-xs text-[#b6eaff]">{item}</span>
+                  {["Cybersecurity education", "Programme design", "Community building", "Web development"].map((item) => (
+                    <span key={item} className="border border-white/15 px-3 py-2 text-[11px] tracking-wide text-white/70">{item}</span>
                   ))}
                 </div>
               </div>
-              <div className="mt-10 flex flex-wrap gap-3">
-                <a href="https://skillspark.tech" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 bg-[#00acff] px-5 py-3 text-sm font-semibold text-[#010033] transition-colors hover:bg-[#76d7ff]">
-                  View SkillSpark <ArrowUpRight size={17} aria-hidden="true" /><span className="sr-only">(opens new tab)</span>
-                </a>
-                <a href="https://github.com/msugh1/skillspart-bootcamp" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 border border-white/25 px-5 py-3 text-sm text-white transition-colors hover:border-[#00acff] hover:text-[#69d1ff]">
-                  Source code <Code2 size={17} aria-hidden="true" /><span className="sr-only">(opens new tab)</span>
-                </a>
-              </div>
+              <a
+                href="https://skillspark.tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group mt-10 inline-flex min-h-11 w-fit items-center gap-3 border border-emerald-400 bg-emerald-400 px-5 py-3 text-sm font-semibold text-[#0a1124] transition-colors hover:bg-[#a7f3d0] motion-reduce:transition-none"
+              >
+                Explore the initiative
+                <ArrowUpRight size={17} aria-hidden="true" className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none" />
+                <span className="sr-only">(opens in a new tab)</span>
+              </a>
             </div>
 
-            <div className="relative overflow-hidden border-t border-[#00acff]/20 bg-[#00acff] p-7 text-[#010033] sm:p-12 lg:border-l lg:border-t-0">
-              <div className="pointer-events-none absolute -right-32 -top-32 size-96 rounded-full border-[54px] border-white/20" aria-hidden="true" />
-              <div className="pointer-events-none absolute -bottom-44 -left-28 size-80 rounded-full border-[48px] border-[#010033]/10" aria-hidden="true" />
-              <div className="relative flex h-full min-h-[410px] flex-col justify-between">
-                <div>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.22em]" style={mono}>SkillSpark / Cybersecurity</p>
-                  <p className="mt-9 max-w-sm text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl" style={display}>
-                    Ignite your potential. Build skills for tomorrow.
+            <div className="relative overflow-hidden border-t border-white/10 bg-[#0e1b29] p-7 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 opacity-40"
+                style={{
+                  backgroundImage: "linear-gradient(to right, rgba(52,211,153,0.10) 1px, transparent 1px), linear-gradient(to bottom, rgba(52,211,153,0.10) 1px, transparent 1px)",
+                  backgroundSize: "32px 32px",
+                }}
+              />
+              <div className="relative flex h-full min-h-[360px] flex-col justify-between">
+                <div className="flex items-center justify-between gap-4">
+                  <span className="text-xs uppercase tracking-[0.22em] text-emerald-300" style={mono}>Project profile</span>
+                  <span className="text-xs text-white/45" style={mono}>01 / 03</span>
+                </div>
+                <div className="my-12">
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-white/50" style={mono}>The mission</p>
+                  <p className="mt-5 max-w-md border-l-2 border-emerald-400 pl-6 text-2xl font-medium leading-snug tracking-tight text-white sm:text-3xl" style={display}>
+                    Make the next generation of cybersecurity talent harder to overlook.
                   </p>
                 </div>
-                <div className="mt-12 border border-[#010033]/15 bg-white/90 p-5 shadow-xl sm:p-7">
-                  <div className="mb-5 flex items-center justify-between gap-3 border-b border-[#010033]/10 pb-4">
-                    <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide"><ShieldCheck size={17} aria-hidden="true" /> Learning pathway</span>
-                    <span className="text-xs font-bold">6 weeks</span>
-                  </div>
-                  <ul className="space-y-3">
-                    {programme.map((item, i) => (
-                      <li key={item} className="flex items-center gap-4 text-sm font-medium">
-                        <span className="text-xs font-bold text-[#007ab8]" style={mono}>0{i + 1}</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-6 flex items-center gap-2 border-t border-[#010033]/10 pt-4 text-xs font-semibold"><BookOpen size={16} aria-hidden="true" /> Learn · Practice · Grow</p>
+                <div className="border border-white/15 bg-[#0a1124]/90">
+                  {[
+                    { no: "01", title: "Brand & platform", detail: "Identity and public website developed" },
+                    { no: "02", title: "Programme", detail: "Six-week cybersecurity training structure designed" },
+                    { no: "03", title: "Community", detail: "Live learning and peer support planned for the first cohort" },
+                  ].map((item, index) => (
+                    <div key={item.no} className={`flex gap-4 p-4 sm:p-5 ${index > 0 ? "border-t border-white/10" : ""}`}>
+                      <span className="shrink-0 pt-0.5 text-xs text-emerald-400" style={mono}>{item.no}</span>
+                      <div>
+                        <p className="text-sm font-semibold text-white">{item.title}</p>
+                        <p className="mt-1 text-xs leading-5 text-white/60">{item.detail}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
+                <p className="mt-5 text-xs text-white/50" style={mono}>Status: Inaugural cohort in preparation</p>
               </div>
             </div>
           </article>
-          <p className="mt-5 text-sm text-white/55">The inaugural cohort is in preparation. Participant outcomes will be shared when verified.</p>
         </div>
       </section>
     </>
