@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { ArrowRight, ArrowUpRight, Mail, Github, Linkedin, Shield, Cloud, Code2, Menu, X } from "lucide-react";
 import heroImage from "../../imports/WhatsApp_Image_2026-05-21_at_6.09.28_PM-Photoroom-2.png";
+import CareerHighlights from "../components/CareerHighlights";
 
 const display = { fontFamily: '"Space Grotesk", Inter, ui-sans-serif, system-ui' };
 const body = { fontFamily: 'Inter, ui-sans-serif, system-ui' };
@@ -101,6 +102,9 @@ const skills = [
   "Firewalls",
   "Endpoint Protection",
   "AWS",
+  "Wazuh",
+  "WSO2",
+  "Postman",
   "Google Cloud",
   "Vercel",
   "C++",
@@ -108,6 +112,8 @@ const skills = [
 ];
 
 const navLinks = [
+  { label: "Experience", href: "#experience" },
+  { label: "SkillSpark", href: "#skillspark" },
   { label: "Work", href: "#work" },
   { label: "Findings", href: "#findings" },
   { label: "About", href: "#about" },
@@ -214,7 +220,7 @@ function Hero() {
             <p
               className="mt-8 max-w-xl text-white/70 text-[15px] md:text-base leading-relaxed"
               style={body}
-            >I'm Felix Demkiir a cybersecurity student and product builder documenting my projects, findings, and learning journey across the intersection of cloud security and software craft.</p>
+            >I'm Felix Demkiir, a cybersecurity student with practical exposure to enterprise security monitoring, API and identity security, and cloud infrastructure. I document what I build, investigate, and learn.</p>
 
             <div className="mt-10 flex flex-wrap items-center gap-3" style={body}>
               <a
@@ -465,11 +471,12 @@ function About() {
           <div className="md:col-span-7" style={body}>
             <p className="text-white/75 text-lg leading-relaxed">
               I&apos;m a cybersecurity student at NUTM (BSc, 2024 to 2028) with
-              hands-on IT support experience and foundational knowledge of
-              security monitoring, threat detection, and incident response.
+              completed a technology internship at VFD Microfinance Bank, with exposure to
+              security monitoring, identity and API security, and cloud infrastructure.
               Skilled in phishing detection, network traffic analysis, and
               vulnerability identification using SIEM platforms, Wireshark,
-              and Nmap.
+              and Nmap. I also founded SkillSpark Bootcamp to expand access to practical
+              cybersecurity education for young people in Nigeria.
             </p>
             <p className="mt-6 text-white/60 leading-relaxed">
               Actively earning the Google Professional Cybersecurity Certificate
@@ -636,6 +643,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#0a1124] text-white antialiased selection:bg-emerald-500 selection:text-[#04130d]" style={body}>
       <Nav />
       <Hero />
+      <CareerHighlights />
       <Projects />
       <Findings />
       <About />
