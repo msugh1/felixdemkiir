@@ -303,62 +303,7 @@ function Projects() {
 }
 
 function Findings() {
-  return (
-    <section id="findings" className="relative bg-[#0a1124] border-t border-white/10">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-24 md:py-32">
-        <SectionHeader
-          eyebrow="Findings & Notes"
-          title="Writing as I learn, not after."
-          kicker="Field notes from cybersecurity coursework, lab work, and the projects above. Half blog, half lab notebook."
-        />
-
-        <div className="grid md:grid-cols-2 gap-px bg-white/10 border border-white/10">
-          {findings.map((f) => (
-            <article
-              key={f.title}
-              className="group bg-[#0a1124] p-8 md:p-10 hover:bg-white/[0.03] transition-colors"
-            >
-              <div className="flex items-center justify-between text-[11px] tracking-[0.2em] uppercase text-white/50" style={mono}>
-                <span className="border border-white/20 px-2.5 py-1">{f.kind}</span>
-                <span>{f.date}</span>
-              </div>
-              <h3 className="mt-7 text-white text-xl md:text-2xl leading-snug tracking-[-0.01em] font-medium" style={display}>
-                {f.title}
-              </h3>
-              <p className="mt-4 text-white/65 leading-relaxed text-[14.5px]" style={body}>
-                {f.excerpt}
-              </p>
-              <div className="mt-8 flex items-center justify-between text-[12px] text-white/60" style={mono}>
-                <span>{f.read}</span>
-                {"docsPath" in f && f.docsPath ? (
-                  <Link
-                    to={f.docsPath}
-                    className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors"
-                  >
-                    Read Documentation <ArrowUpRight className="w-3.5 h-3.5" />
-                  </Link>
-                ) : (
-                  <span className="inline-flex items-center gap-2 text-white/80 group-hover:text-white">
-                    Read <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                  </span>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div className="mt-10 flex justify-center">
-          <Link
-            to="/findings"
-            className="inline-flex items-center gap-3 border border-white/20 hover:border-emerald-400 hover:text-emerald-400 text-white px-6 py-3.5 text-[13px] tracking-wide transition-colors"
-            style={body}
-          >
-            Browse the full archive <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
+  return <section id="findings" className="scroll-mt-20 border-t border-white/10 bg-[#0a1124]"><div className="mx-auto max-w-[1400px] px-6 py-28 md:px-10 md:py-36"><div className="grid gap-6 md:grid-cols-12"><span className="font-mono text-[11px] tracking-[.2em] uppercase text-emerald-400 md:col-span-4">04 — SECURITY RESEARCH</span><div className="md:col-span-8"><h2 className="text-4xl font-medium tracking-[-.05em] text-white md:text-6xl" style={display}>Inside the <em className="font-light text-emerald-400">lab.</em></h2><p className="mt-5 max-w-xl leading-7 text-white/60">Hands-on investigations and write-ups: the methods, findings and remediation behind each assessment.</p></div></div><div className="mt-12 border-t border-white/10">{findings.map((f,i)=><Link to={f.docsPath} key={f.title} className="group grid items-center gap-5 border-b border-white/10 py-7 transition-colors hover:bg-white/[.025] md:grid-cols-12 md:gap-8"><span className="font-mono text-xs text-emerald-400 md:col-span-1">0{i+1}</span><div className="md:col-span-7"><h3 className="text-xl font-medium tracking-tight text-white transition-colors group-hover:text-emerald-400 md:text-2xl" style={display}>{f.title}</h3><p className="mt-3 max-w-2xl text-sm leading-6 text-white/55">{f.excerpt}</p></div><div className="font-mono text-[10px] uppercase tracking-wider text-white/40 md:col-span-3">{f.kind} / {f.date}</div><ArrowUpRight className="text-emerald-400 transition-transform motion-safe:group-hover:-translate-y-1 motion-safe:group-hover:translate-x-1 md:col-span-1" size={21}/></Link>)}</div><Link to="/findings" className="mt-9 inline-flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300">Browse the full findings archive <ArrowUpRight size={17}/></Link></div></section>;
 }
 
 function About() {
