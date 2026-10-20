@@ -224,73 +224,33 @@ function Nav() {
 }
 
 function Hero() {
+  const [reduced, setReduced] = useState(true);
+  useEffect(() => {
+    const q = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduced(q.matches);
+    update(); q.addEventListener?.("change", update);
+    return () => q.removeEventListener?.("change", update);
+  }, []);
   return (
-    <section id="top" className="relative min-h-screen bg-[#0a1124] overflow-hidden flex flex-col">
-      <div className="relative z-10 flex-1 flex items-center">
-        <div className="max-w-[1400px] mx-auto w-full px-6 md:px-10 pt-32 pb-20 md:py-32 grid md:grid-cols-12 gap-10 items-center">
-          <div className="md:col-span-6 lg:col-span-6">
-            <div className="flex items-center gap-3 mb-10 text-white/60 text-[11px] tracking-[0.25em] uppercase" style={mono}>
-              <span className="h-px w-10 bg-white/40" />
-              Portfolio · 2026
-            </div>
-
-            <h1
-              className="text-white text-[42px] leading-[1.02] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] tracking-[-0.02em] font-medium"
-              style={display}
-            >
-              I build, investigate, and write about{" "}
-              <span className="italic font-light text-white/70">secure</span> digital systems.
-            </h1>
-
-            <p
-              className="mt-8 max-w-xl text-white/70 text-[15px] md:text-base leading-relaxed"
-              style={body}
-            >I'm Felix Demkiir, a cybersecurity student with practical exposure to enterprise security monitoring, API and identity security, and cloud infrastructure. I document what I build, investigate, and learn.</p>
-
-            <div className="mt-10 flex flex-wrap items-center gap-3" style={body}>
-              <a
-                href="#work"
-                className="group inline-flex items-center gap-3 bg-emerald-500 text-[#04130d] px-6 py-3.5 text-[13px] tracking-wide hover:bg-emerald-400 transition-colors"
-              >
-                View My Work
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-              </a>
-              <a
-                href="#findings"
-                className="group inline-flex items-center gap-3 border border-white/25 hover:border-white text-white px-6 py-3.5 text-[13px] tracking-wide backdrop-blur-sm bg-white/5 transition-colors"
-              >
-                Read Findings
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </a>
-            </div>
-          </div>
-
-          <div className="hidden md:flex md:col-span-6 lg:col-span-6 items-end justify-center h-full relative">
-            <img
-              src={HERO_IMAGE}
-              alt="Portrait of Felix Demkiir"
-              className="w-full max-w-lg lg:max-w-xl xl:max-w-2xl object-contain object-bottom"
-              style={{ maxHeight: "90vh" }}
-            />
-            {/* left edge */}
-            <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#0a1124] to-transparent pointer-events-none" />
-            {/* right edge */}
-            <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#0a1124] to-transparent pointer-events-none" />
-            {/* bottom edge */}
-            <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[#0a1124] to-transparent pointer-events-none" />
-            {/* top edge */}
-            <div className="absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-[#0a1124] to-transparent pointer-events-none" />
-          </div>
+    <section id="top" className="relative min-h-[92vh] overflow-hidden bg-[#0a1124] flex flex-col border-b border-emerald-500/20">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.16]" aria-hidden="true" style={{backgroundImage:"linear-gradient(rgba(16,185,129,.18) 1px, transparent 1px),linear-gradient(90deg,rgba(16,185,129,.18) 1px,transparent 1px)",backgroundSize:"64px 64px"}} />
+      {!reduced && <div className="pointer-events-none absolute inset-0 opacity-50 [mask-image:linear-gradient(to_bottom,black,transparent_95%)]" aria-hidden="true">
+        <Aurora colorStops={["#0a1124","#0d5b47","#1a473e","#0a1124"]} amplitude={0.45} blend={0.65} speed={0.3} opacity={0.6} brightness={0.6} dpr={1} mouseInteraction={false} />
+      </div>}
+      <div className="relative z-10 mx-auto grid w-full max-w-[1400px] flex-1 items-center gap-12 px-6 pb-14 pt-36 md:grid-cols-12 md:px-10 md:pb-20">
+        <div className="md:col-span-7">
+          <div className="mb-9 flex items-center gap-3 font-mono text-[10px] tracking-[.2em] text-emerald-400 uppercase"><span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_18px_#10b981]" /> CYBERSECURITY STUDENT & BUILDER <span className="hidden text-white/45 sm:inline">/ LAGOS, NG</span></div>
+          <h1 className="max-w-[850px] font-medium tracking-[-.065em] leading-[1.04] text-white text-[clamp(3.4rem,7vw,7.4rem)]" style={display}>Securing systems.<br/><span className="text-emerald-400">Building what’s next.</span></h1>
+          <p className="mt-8 max-w-xl text-base leading-8 text-white/65 md:text-lg" style={body}>I'm <strong className="font-medium text-white">Msugh Felix Demkiir</strong> — a cybersecurity student working across cloud security, threat analysis, network defence, and the engineering behind resilient digital systems.</p>
+          <div className="mt-9 flex flex-wrap gap-3"><a href="#work" className="inline-flex items-center gap-3 bg-emerald-500 px-6 py-3.5 text-sm font-semibold text-[#04130d] hover:bg-emerald-400">Explore my work <ArrowUpRight size={18}/></a><a href="https://drive.google.com/file/d/119fkAt46DgATxfIaGVOlPkx-4DCrxyb-/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 border border-white/30 px-6 py-3.5 text-sm text-white hover:border-emerald-400">View résumé <ArrowRight size={17}/></a></div>
+          <div className="mt-16 grid max-w-xl grid-cols-3 border-t border-white/15 pt-6"><div><strong className="block text-3xl text-white" style={display}>2026</strong><span className="mt-2 block text-[10px] uppercase tracking-wider text-white/40">Industry experience</span></div><div><strong className="block text-3xl text-white" style={display}>06</strong><span className="mt-2 block text-[10px] uppercase tracking-wider text-white/40">Security labs</span></div><div><strong className="block text-3xl text-white" style={display}>01</strong><span className="mt-2 block text-[10px] uppercase tracking-wider text-white/40">Initiative founded</span></div></div>
+        </div>
+        <div className="relative hidden md:col-span-5 md:block">
+          <div className="relative overflow-hidden border border-emerald-400/25 bg-[#10261f]"><div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(16,185,129,.19),transparent_70%)]"/><img src={HERO_IMAGE} alt="Portrait of Felix Demkiir" className="relative z-10 mx-auto max-h-[660px] w-full object-contain object-bottom"/><div className="absolute inset-x-0 bottom-0 z-20 h-28 bg-gradient-to-t from-[#0a1124] to-transparent"/></div>
+          <div className="flex justify-between border border-t-0 border-white/15 bg-[#0a1124] p-4 font-mono text-[10px] uppercase tracking-[.16em] text-white/50"><span>IDENTITY / FELIX DEMKIIR</span><span>FD — 001</span></div>
         </div>
       </div>
-
-      <div className="relative z-10 border-t border-white/10 backdrop-blur-md bg-[#0a1124]/40">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-5 flex flex-wrap items-center justify-between gap-4 text-[11px] tracking-[0.2em] uppercase text-white/50" style={mono}>
-          <span>Based in Lagos · Available for collab</span>
-          <span className="hidden md:inline">Cybersecurity / Cloud / Product</span>
-          <span>Scroll ↓</span>
-        </div>
-      </div>
+      <div className="relative z-10 mx-auto flex w-full max-w-[1400px] items-center justify-between border-t border-white/10 px-6 py-5 font-mono text-[10px] tracking-[.16em] text-white/50 md:px-10"><span>SECURITY IS A PRACTICE, NOT A LABEL.</span><a href="#work" className="hover:text-emerald-400">SCROLL TO EXPLORE ↓</a></div>
     </section>
   );
 }
