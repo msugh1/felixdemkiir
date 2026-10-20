@@ -363,94 +363,18 @@ function Findings() {
 
 function About() {
   const pillars = [
-    { icon: Shield, label: "Cybersecurity", text: "Phishing detection, SIEM investigations, Wireshark traffic analysis, and Nmap enumeration applied in real labs and CTF challenges." },
-    { icon: Cloud, label: "Cloud & Deployment", text: "Deploying on AWS and Google Cloud with IAM controls, system hardening, and least-privilege by default. Vercel for front-end delivery." },
-    { icon: Code2, label: "Product Build", text: "Designing and shipping security-minded tools end to end from a notebook idea to something people actually use." },
+    { icon: Shield, label: "Security operations", text: "Threat investigation, vulnerability assessment, network traffic analysis and defensive security labs." },
+    { icon: Cloud, label: "Cloud & identity", text: "Experience with AWS infrastructure, Wazuh monitoring, WSO2 identity and API-security workflows." },
+    { icon: Code2, label: "Building products", text: "Developing software and education initiatives that turn ideas into working experiences." },
   ];
-
-  return (
-    <>
-    <section id="about" className="relative bg-[#0a1124] border-t border-white/10">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-24 md:py-32">
-        <div className="grid md:grid-cols-12 gap-10 md:gap-16">
-          <div className="md:col-span-5">
-            <div className="flex items-center gap-3 text-white/50 text-[11px] tracking-[0.25em] uppercase mb-8" style={mono}>
-              <span className="h-px w-8 bg-white/30" />
-              About
-            </div>
-            <h2 className="text-white text-3xl md:text-5xl lg:text-[56px] leading-[1.05] tracking-[-0.02em] font-medium" style={display}>
-              Curious, careful, and a little bit obsessed with how systems fail.
-            </h2>
-          </div>
-          <div className="md:col-span-7" style={body}>
-            <p className="text-white/75 text-lg leading-relaxed">
-              I&apos;m a cybersecurity student at NUTM (BSc, 2024–2028). I completed
-              a technology internship at VFD Microfinance Bank, gaining exposure to
-              security monitoring, identity and API security, and cloud infrastructure.
-              Skilled in phishing detection, network traffic analysis, and
-              vulnerability identification using SIEM platforms, Wireshark,
-              and Nmap. I also founded SkillSpark Bootcamp to expand access to practical
-              cybersecurity education for young people in Nigeria.
-            </p>
-            <p className="mt-6 text-white/60 leading-relaxed">
-              I&apos;ve completed the Google Cybersecurity Professional Certificate,
-              alongside training and credentials in security fundamentals and
-              phishing prevention. I treat this portfolio as a working notebook:
-              documenting the systems I build, the incidents I investigate,
-              and what I learn from each project.
-            </p>
-
-            <div className="mt-10">
-              <div className="text-[11px] tracking-[0.2em] uppercase text-white/40 mb-4" style={mono}>
-                Certifications
-              </div>
-              <ul className="space-y-2.5" style={body}>
-                {[
-                  "Google Cybersecurity Professional Certificate — Completed 2026",
-                  "Microsoft SC-900: Security, Compliance & Identity Fundamentals",
-                  "NITDA 3MTT Cybersecurity Certification",
-                  "Hack & Fix Certified Phishing Prevention Specialist",
-                ].map((cert) => (
-                  <li key={cert} className="flex items-start gap-2.5 text-white/65 text-[14px] leading-snug">
-                    <span className="mt-[6px] w-1 h-1 rounded-full bg-emerald-400 shrink-0" />
-                    {cert}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="https://drive.google.com/drive/folders/1sYuzPEwZxeGa-XJ492gZE7sRWeKx7cQM?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 border border-white/20 text-white/70 hover:text-white hover:border-white/50 transition-colors text-sm tracking-wide"
-                style={mono}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-white/50" />
-                View Certifications
-              </a>
-            </div>
-
-            <div className="mt-12 grid sm:grid-cols-3 gap-px bg-white/10 border border-white/10">
-              {pillars.map((p) => {
-                const Icon = p.icon;
-                return (
-                  <div key={p.label} className="bg-[#0a1124] p-6">
-                    <Icon className="w-5 h-5 text-white" strokeWidth={1.5} />
-                    <div className="mt-5 text-white text-[13px] tracking-[0.2em] uppercase" style={mono}>
-                      {p.label}
-                    </div>
-                    <p className="mt-3 text-white/60 text-[13.5px] leading-relaxed">
-                      {p.text}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
+  return <section id="about" className="scroll-mt-20 border-t border-white/10 bg-[#0a1124]">
+    <div className="mx-auto max-w-[1400px] px-6 py-28 md:px-10 md:py-36">
+      <div className="grid gap-12 md:grid-cols-12 md:gap-16">
+        <div className="md:col-span-5"><span className="font-mono text-[11px] uppercase tracking-[.2em] text-emerald-400">05 — PROFILE / MISSION</span><h2 className="mt-8 text-4xl font-medium leading-tight tracking-[-.045em] text-white md:text-5xl" style={display}>Curiosity led me to security. <em className="font-light text-emerald-400">Building made it real.</em></h2></div>
+        <div className="md:col-span-7"><p className="max-w-2xl text-lg leading-9 text-white/75">I'm a cybersecurity student at the Nigerian University of Technology and Management (BSc, 2024–2028). I learn by building systems, investigating weaknesses and documenting the thinking behind my work.</p><p className="mt-6 max-w-2xl leading-8 text-white/60">After completing a technology internship at VFD Microfinance Bank, I'm deepening my interests in security operations, network architecture and secure cloud environments. I also founded SkillSpark Bootcamp to help young Nigerians access practical technology education.</p><div className="mt-10 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-3">{pillars.map(({icon:Icon,label,text})=><div key={label} className="bg-[#0a1124] p-6 transition-colors hover:bg-[#102032]"><Icon className="text-emerald-400" size={22} strokeWidth={1.5}/><h3 className="mt-5 text-sm font-semibold text-white">{label}</h3><p className="mt-3 text-xs leading-6 text-white/60">{text}</p></div>)}</div></div>
       </div>
-    </section>
-    </>
-  );
+    </div>
+  </section>;
 }
 
 function Skills() {
