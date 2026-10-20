@@ -94,10 +94,10 @@ export default function CareerHighlights() {
             </div>
             <div className="md:col-span-8">
               <h2 className="max-w-2xl text-4xl font-medium leading-tight tracking-tight text-white md:text-5xl" style={display}>
-                Creating opportunities beyond the classroom.
+                Turning a skills gap into an opportunity.
               </h2>
               <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/60">
-                I build things that solve problems, including access to practical technology education.
+                I believe access to opportunity should not depend on where someone starts. SkillSpark is how I began putting that belief into practice.
               </p>
             </div>
           </div>
@@ -113,7 +113,7 @@ export default function CareerHighlights() {
                 </h3>
                 <p className="mt-3 text-sm text-emerald-300">Founder & Programme Lead</p>
                 <p className="mt-7 max-w-xl text-[15px] leading-8 text-white/75">
-                  I founded SkillSpark to help underserved young people in Nigeria access practical digital-skills education. I created its identity and website, designed the first six-week online Cybersecurity Bootcamp, and developed a structured learning and community approach.
+                  I saw how access, cost and a lack of guidance can hold motivated young Nigerians back from technology careers. So I started SkillSpark: a free, structured cybersecurity learning initiative designed to make that first step more achievable. I lead the programme strategy, built its digital presence, designed the inaugural learning experience and am preparing a community where learners can grow together.
                 </p>
                 <div className="mt-7 flex flex-wrap gap-2">
                   {["Cybersecurity education", "Programme design", "Community building", "Web development"].map((item) => (
@@ -150,14 +150,14 @@ export default function CareerHighlights() {
                 <div className="my-12">
                   <p className="text-[11px] uppercase tracking-[0.2em] text-white/50" style={mono}>The mission</p>
                   <p className="mt-5 max-w-md border-l-2 border-emerald-400 pl-6 text-2xl font-medium leading-snug tracking-tight text-white sm:text-3xl" style={display}>
-                    Make the next generation of cybersecurity talent harder to overlook.
+                    Potential is everywhere. Opportunity should be too.
                   </p>
                 </div>
                 <div className="border border-white/15 bg-[#0a1124]/90">
                   {[
-                    { no: "01", title: "Brand & platform", detail: "Identity and public website developed" },
-                    { no: "02", title: "Programme", detail: "Six-week cybersecurity training structure designed" },
-                    { no: "03", title: "Community", detail: "Live learning and peer support planned for the first cohort" },
+                    { no: "01", title: "Brand & platform", detail: "Defined the brand, built and launched the public website" },
+                    { no: "02", title: "Programme", detail: "Designed the inaugural six-week cybersecurity pathway" },
+                    { no: "03", title: "Community", detail: "Organising live sessions and peer-led learning support" },
                   ].map((item, index) => (
                     <div key={item.no} className={`flex gap-4 p-4 sm:p-5 ${index > 0 ? "border-t border-white/10" : ""}`}>
                       <span className="shrink-0 pt-0.5 text-xs text-emerald-400" style={mono}>{item.no}</span>
