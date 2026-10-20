@@ -137,11 +137,9 @@ const skills = [
 ];
 
 const navLinks = [
-  { label: "Experience", href: "#experience" },
-  { label: "SkillSpark", href: "#skillspark" },
   { label: "Work", href: "#work" },
-  { label: "Findings", href: "#findings" },
-  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Research", href: "#findings" },
   { label: "Contact", href: "#contact" },
 ];
 
