@@ -343,69 +343,12 @@ function Credentials(){
   return <section className="border-t border-white/10 bg-[#0a1124]"><div className="mx-auto grid max-w-[1400px] gap-12 px-6 py-24 md:grid-cols-12 md:px-10 md:py-32"><div className="md:col-span-5"><span className="font-mono text-[11px] uppercase tracking-[.2em] text-emerald-400">07 — EDUCATION & CREDENTIALS</span><h2 className="mt-7 text-4xl font-medium tracking-[-.05em] text-white md:text-5xl" style={display}>Learning with <em className="font-light text-emerald-400">intention.</em></h2><p className="mt-7 leading-8 text-white/60">BSc Cybersecurity · Nigerian University of Technology and Management<br/>2024–2028 (expected)</p><a href="https://drive.google.com/drive/folders/1sYuzPEwZxeGa-XJ492gZE7sRWeKx7cQM?usp=sharing" target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300">View credentials <ArrowUpRight size={16}/></a></div><div className="border-t border-white/10 md:col-span-7">{list.map((c,i)=><div key={c[0]} className="grid grid-cols-[2rem_1fr] gap-4 border-b border-white/10 py-6"><span className="font-mono text-xs text-emerald-400">0{i+1}</span><div><h3 className="text-base font-medium text-white">{c[0]}</h3><p className="mt-2 text-xs text-white/50">{c[1]}</p></div></div>)}</div></div></section>;
 }
 function Contact() {
-  const links = [
+  const links=[
     { icon: Mail, label: "Email", value: "msughdemkiir@gmail.com", href: "mailto:msughdemkiir@gmail.com" },
-    { icon: Linkedin, label: "LinkedIn", value: "msugh-felix-demkiir", href: "https://www.linkedin.com/in/msugh-felix-demkiir-cybersecurity-analyst/" },
-    { icon: Github, label: "GitHub", value: "@msugh1", href: "https://github.com/msugh1" },
+    { icon: Linkedin, label: "LinkedIn", value: "Let's connect professionally", href: "https://www.linkedin.com/in/msugh-felix-demkiir-cybersecurity-analyst/" },
+    { icon: Github, label: "GitHub", value: "Explore my repositories", href: "https://github.com/msugh1" },
   ];
-
-  return (
-    <section id="contact" className="relative bg-[#0a1124] border-t border-white/10">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-24 md:py-36">
-        <div className="flex items-center gap-3 text-white/50 text-[11px] tracking-[0.25em] uppercase mb-10" style={mono}>
-          <span className="h-px w-8 bg-white/30" />
-          Contact
-        </div>
-
-        <h2
-          className="text-white max-w-4xl text-4xl md:text-6xl lg:text-[80px] leading-[1.02] tracking-[-0.02em] font-medium"
-          style={display}
-        >
-          Have a system worth securing or a project worth shipping?
-        </h2>
-        <p className="mt-8 max-w-xl text-white/65 leading-relaxed" style={body}>
-          I&apos;m always open to collaborating on cybersecurity research,
-          security-minded product work, and writing projects. The fastest way
-          to reach me is email.
-        </p>
-
-        <div className="mt-14 grid sm:grid-cols-3 gap-px bg-white/10 border border-white/10">
-          {links.map((l) => {
-            const Icon = l.icon;
-            return (
-              <a
-                key={l.label}
-                href={l.href}
-                target={l.label !== "Email" ? "_blank" : undefined}
-                rel={l.label !== "Email" ? "noopener noreferrer" : undefined}
-                className="group bg-[#0a1124] p-8 hover:bg-emerald-500 hover:text-[#04130d] transition-colors"
-              >
-                <Icon className="w-5 h-5" strokeWidth={1.5} />
-                <div className="mt-8 flex items-end justify-between gap-4">
-                  <div>
-                    <div className="text-[11px] tracking-[0.25em] uppercase text-white/50 group-hover:text-[#04130d]/70" style={mono}>
-                      {l.label}
-                    </div>
-                    <div className="mt-2 text-[15px] text-white group-hover:text-[#04130d]" style={body}>
-                      {l.value}
-                    </div>
-                  </div>
-                  <ArrowUpRight className="w-5 h-5 text-white/60 group-hover:text-[#04130d] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </div>
-              </a>
-            );
-          })}
-        </div>
-      </div>
-
-      <footer className="border-t border-white/10">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-8 flex flex-wrap items-center justify-between gap-4 text-[12px] text-white/40" style={mono}>
-          <span>© 2026 Felix Demkiir. All rights reserved.</span>
-          <span className="tracking-[0.2em] uppercase">Designed & built in Lagos</span>
-        </div>
-      </footer>
-    </section>
-  );
+  return <section id="contact" className="scroll-mt-20 border-t border-emerald-400/20 bg-[#07121c]"><div className="mx-auto max-w-[1400px] px-6 pt-24 md:px-10 md:pt-32"><span className="font-mono text-[11px] tracking-[.2em] uppercase text-emerald-400">08 — LET'S CONNECT</span><div className="mt-9 grid gap-12 pb-24 md:grid-cols-12"><div className="md:col-span-8"><p className="font-mono text-[10px] uppercase tracking-[.2em] text-white/45">OPEN TO CYBERSECURITY INTERNSHIPS & COLLABORATIONS</p><h2 className="mt-7 text-5xl font-medium leading-[1.05] tracking-[-.05em] text-white md:text-7xl" style={display}>Let's build<br/><em className="font-light text-emerald-400">something secure.</em></h2><p className="mt-7 max-w-lg leading-7 text-white/60">Interested in security operations, cloud security, engineering or meaningful collaboration? I'd be glad to connect.</p><a href="mailto:msughdemkiir@gmail.com" className="mt-9 inline-flex items-center gap-3 border-b border-emerald-400 pb-3 text-lg font-medium text-emerald-400 hover:text-emerald-300">Get in touch <ArrowUpRight size={22}/></a></div><div className="self-end border-t border-white/15 md:col-span-4">{links.map(l=>{const Icon=l.icon;return <a key={l.label} href={l.href} target={l.label==="Email"?undefined:"_blank"} rel={l.label==="Email"?undefined:"noopener noreferrer"} className="group flex items-center gap-4 border-b border-white/15 py-5 text-white/65 transition-colors hover:text-emerald-400"><Icon size={19}/><span className="flex-1"><strong className="block text-sm font-medium">{l.label}</strong><small className="mt-1 block text-xs text-white/40">{l.value}</small></span><ArrowUpRight size={19}/></a>})}</div></div><footer className="flex flex-wrap items-center justify-between gap-4 border-t border-white/10 py-8 font-mono text-[10px] uppercase tracking-wider text-white/40"><span>© 2026 MSUGH FELIX DEMKIIR</span><span>SECURITY / ENGINEERING / COMMUNITY</span><a href="#top" className="text-emerald-400 hover:text-emerald-300">BACK TO TOP ↑</a></footer></div></section>;
 }
 
 export default function Home() {
