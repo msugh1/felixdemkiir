@@ -13,37 +13,61 @@ const HERO_IMAGE = heroImage;
 const projects = [
   {
     no: "01",
-    name: "Secure Cloud Deployment: PrestaShop on AWS",
-    tag: "Cloud · Security",
+    name: "KafiTech: Secure Enterprise Network Design",
+    tag: "Network Security · Architecture",
     year: "2026",
     blurb:
-      "Deployed a decoupled, multi-tier e-commerce infrastructure on AWS: EC2 for the web layer, RDS MySQL for an isolated database tier, strict Security Group rules enforcing least privilege, and a full LAMP stack hardened for production.",
-    stack: ["AWS EC2", "AWS RDS", "MySQL", "Apache", "Ubuntu", "LAMP"],
-    href: "http://13.62.103.215/index.php",
-    liveLabel: "View Live App",
-    docsPath: "/projects/prestashop-aws",
+      "Designed a segmented enterprise network in Cisco Packet Tracer with departmental VLANs, controlled inter-VLAN access, a restricted DMZ, guest-network isolation, and documented switch-hardening and validation procedures.",
+    stack: ["Cisco Packet Tracer", "VLANs", "ACLs", "DMZ", "Network Hardening"],
+    href: "https://github.com/msugh1/kafitech-cyber-network-design",
+    liveLabel: "View Network Repository",
+    docsPath: "/projects/kafitech-network-design",
+    image: "https://raw.githubusercontent.com/msugh1/kafitech-cyber-network-design/main/docs/topology/network-topology.jpg",
+    imageAlt: "KafiTech enterprise network topology diagram",
   },
   {
     no: "02",
-    name: "BloodLink: Hospital Blood Bank Management",
-    tag: "Healthtech · Product",
-    year: "2025",
+    name: "FraudGuard: Merchant Risk Monitoring",
+    tag: "Fraud Analysis · Security Prototype",
+    year: "2026",
     blurb:
-      "Comprehensive blood bank management system with real-time inventory tracking, smart alerts for low stock and expiring units, inter-hospital blood sharing, AI demand forecasting, and compliance reporting.",
-    stack: ["React 18", "Vite", "React Router", "Tailwind CSS", "Recharts", "Radix UI"],
-    href: "https://blood-link-chi.vercel.app/",
-    liveLabel: "View Live App",
+      "Built a Java Swing desktop prototype for analyst-led merchant fraud investigations. It combines SQLite-backed records, account flagging, searchable watchlists and a transparent rule-based risk score informed by report frequency and fraud category.",
+    stack: ["Java", "Swing", "SQLite", "Risk Scoring", "Fraud Monitoring"],
+    href: "https://github.com/msugh1/fraud_guard",
+    liveLabel: "View Project & Source",
+    image: "https://raw.githubusercontent.com/msugh1/fraud_guard/main/screenshots/dashboard.png",
+    imageAlt: "FraudGuard merchant status dashboard screenshot",
   },
   {
     no: "03",
-    name: "What's Next: Personalized AI Career Roadmaps",
-    tag: "AI · EdTech · Product",
-    year: "2025",
+    name: "Secure Cloud Deployment: PrestaShop on AWS",
+    tag: "Cloud Infrastructure · Security",
+    year: "2026",
     blurb:
-      "Full-stack platform that generates custom career roadmaps from your target role and university course using Google Gemini. Features AI-generated quizzes, project-based learning with GitHub scoring, YouTube-integrated resources, job matching, and a dynamic portfolio and CV builder.",
-    stack: ["Django 5.2", "Django REST Framework", "React 18", "Vite", "D3.js", "Celery", "Redis", "Google Gemini API"],
+      "Deployed an e-commerce application across AWS EC2 and RDS, separating the public-facing web layer from its database. Documented security-group restrictions, limited SSH administration, deployment steps and security considerations.",
+    stack: ["AWS EC2", "AWS RDS", "MySQL", "Security Groups", "Ubuntu"],
+    href: "https://github.com/msugh1/nexus-gadgets-aws-deployment.",
+    liveLabel: "View Deployment Repository",
+    docsPath: "/projects/prestashop-aws",
+    image: "https://raw.githubusercontent.com/msugh1/nexus-gadgets-aws-deployment./main/assets/banner.png",
+    imageAlt: "Nexus Gadgets AWS PrestaShop deployment project banner",
+  },
+];
+
+const otherProjects = [
+  {
+    name: "BloodLink",
+    category: "Healthtech · Web Application",
+    summary: "Blood-bank inventory management and demand-forecasting application with availability alerts and inter-hospital collaboration features.",
+    tools: ["React", "Vite", "Recharts"],
+    href: "https://blood-link-chi.vercel.app/",
+  },
+  {
+    name: "What's Next",
+    category: "AI · Education Technology",
+    summary: "A career-roadmap platform bringing together guided learning pathways, AI-powered recommendations and career-development resources.",
+    tools: ["Django", "React", "Gemini API"],
     href: "https://whats-next-1.onrender.com",
-    liveLabel: "View Live App",
   },
 ];
 
@@ -295,93 +319,111 @@ function SectionHeader({ eyebrow, title, kicker }: { eyebrow: string; title: str
 
 function Projects() {
   return (
-    <section id="work" className="relative bg-[#0a1124] border-t border-white/10">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-24 md:py-32">
+    <section id="work" className="relative scroll-mt-20 border-t border-white/10 bg-[#0a1124]">
+      <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-10 md:py-32">
         <SectionHeader
-          eyebrow="Featured Projects"
-          title="Tools I'm building at the seam of security and product."
-          kicker="A small, opinionated catalog of things I've shipped or am actively iterating on. Each one started as a question I wanted answered."
+          eyebrow="Selected Security Work"
+          title="Practical security, documented."
+          kicker="Network architecture, fraud analysis and cloud infrastructure—projects where I could investigate real technical problems, build working solutions and document the decisions behind them."
         />
 
         <div className="border-t border-white/10">
           {projects.map((p) => (
-            <div
+            <article
               key={p.name}
-              className="border-b border-white/10 py-10 md:py-14 transition-colors hover:bg-white/[0.02]"
+              className="group border-b border-white/10 py-10 transition-colors duration-300 hover:bg-white/[0.015] md:py-14"
             >
-              <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-start">
-                <div className="md:col-span-1 text-white/40 text-[12px]" style={mono}>
-                  {p.no}
-                </div>
+              <div className="grid items-start gap-6 md:grid-cols-12 md:gap-10">
+                <span className="text-xs text-emerald-400" style={mono}>{p.no} / 03</span>
                 <div className="md:col-span-5">
-                  <h3 className="text-white text-2xl md:text-4xl tracking-[-0.02em] font-medium leading-tight" style={display}>
+                  <h3 className="text-2xl font-medium leading-tight tracking-tight text-white md:text-4xl" style={display}>
                     {p.name}
                   </h3>
-                  <div className="mt-3 flex items-center gap-4 text-white/50 text-[12px] tracking-wider uppercase" style={mono}>
+                  <div className="mt-4 flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-wider text-white/50" style={mono}>
                     <span>{p.tag}</span>
-                    <span className="h-px w-6 bg-white/20" />
+                    <span className="h-px w-5 bg-white/20" aria-hidden="true" />
                     <span>{p.year}</span>
                   </div>
-                </div>
-                <div className="md:col-span-5">
-                  <p className="text-white/70 leading-relaxed text-[15px]" style={body}>
-                    {p.blurb}
-                  </p>
-                  <div className="mt-5 flex flex-wrap gap-2" style={mono}>
-                    {p.stack.map((s) => (
-                      <span
-                        key={s}
-                        className="text-[10.5px] tracking-wider uppercase text-white/55 border border-white/15 px-2.5 py-1"
-                      >
-                        {s}
-                      </span>
-                    ))}
+                  <div className="mt-7 overflow-hidden border border-white/10 bg-[#101c2b] p-2">
+                    <img
+                      src={p.image}
+                      alt={p.imageAlt}
+                      loading="lazy"
+                      decoding="async"
+                      className="aspect-[16/9] w-full object-contain transition-transform duration-300 motion-safe:group-hover:scale-[1.02]"
+                    />
                   </div>
-                  {(("docsPath" in p && p.docsPath) || p.href !== "#") && (
-                    <div className="mt-6 flex flex-wrap gap-3" style={body}>
-                      {"docsPath" in p && p.docsPath && (
-                        <Link
-                          to={p.docsPath}
-                          className="inline-flex items-center gap-2 bg-emerald-500 text-[#04130d] px-4 py-2.5 text-[12px] tracking-wide hover:bg-emerald-400 transition-colors font-medium"
-                        >
-                          Read Documentation <ArrowRight className="w-3.5 h-3.5" />
-                        </Link>
-                      )}
-                      {p.href !== "#" && (
-                        <a
-                          href={p.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 border border-white/20 hover:border-white text-white/80 hover:text-white px-4 py-2.5 text-[12px] tracking-wide transition-colors"
-                        >
-                          {"liveLabel" in p ? p.liveLabel : "View on GitHub"} <ArrowUpRight className="w-3.5 h-3.5" />
-                        </a>
-                      )}
-                    </div>
-                  )}
                 </div>
-                <div className="md:col-span-1 flex md:justify-end">
-                  {"docsPath" in p && p.docsPath ? (
-                    <Link
-                      to={p.docsPath}
-                      className="inline-flex h-10 w-10 items-center justify-center border border-white/20 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#04130d] hover:border-emerald-500"
-                    >
-                      <ArrowUpRight className="w-4 h-4" />
-                    </Link>
-                  ) : (
+                <div className="flex flex-col gap-5 md:col-span-5">
+                  <p className="text-[15px] leading-7 text-white/75" style={body}>{p.blurb}</p>
+                  <ul className="flex flex-wrap gap-2">
+                    {p.stack.map((tool) => (
+                      <li key={tool} className="border border-white/15 px-2.5 py-1.5 text-[10.5px] uppercase tracking-wider text-white/60" style={mono}>
+                        {tool}
+                      </li>
+                    ))}
+                  </ul>
+                  {p.name.startsWith("FraudGuard") && (
+                    <p className="border-l-2 border-emerald-400/70 pl-4 text-xs leading-6 text-white/55">
+                      Demonstration prototype; authentication and operational safeguards require further work before production use.
+                    </p>
+                  )}
+                  <div className="flex flex-wrap gap-3 pt-1">
+                    {"docsPath" in p && p.docsPath && (
+                      <Link
+                        to={p.docsPath}
+                        className="inline-flex min-h-11 items-center gap-2 bg-emerald-500 px-4 py-2.5 text-xs font-semibold text-[#04130d] transition-colors hover:bg-emerald-400"
+                      >
+                        Read case study <ArrowRight size={15} aria-hidden="true" />
+                      </Link>
+                    )}
                     <a
                       href={p.href}
-                      target={p.href !== "#" ? "_blank" : undefined}
-                      rel={p.href !== "#" ? "noopener noreferrer" : undefined}
-                      className="inline-flex h-10 w-10 items-center justify-center border border-white/20 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#04130d] hover:border-emerald-500"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex min-h-11 items-center gap-2 border border-white/25 px-4 py-2.5 text-xs text-white/80 transition-colors hover:border-emerald-400 hover:text-emerald-400"
                     >
-                      <ArrowUpRight className="w-4 h-4" />
+                      {p.liveLabel} <ArrowUpRight size={15} aria-hidden="true" />
+                      <span className="sr-only">(opens in a new tab)</span>
                     </a>
-                  )}
+                  </div>
+                </div>
+                <div className="hidden justify-end md:col-span-1 md:flex">
+                  <a href={p.href} target="_blank" rel="noopener noreferrer" aria-label={`Open ${p.name} repository in a new tab`}
+                     className="grid size-10 place-items-center border border-white/20 text-white/60 transition-colors hover:border-emerald-400 hover:bg-emerald-500 hover:text-[#04130d]">
+                    <ArrowUpRight size={18} aria-hidden="true" />
+                  </a>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
+        </div>
+
+        <div className="mt-20 border-t border-white/10 pt-9">
+          <div className="mb-7 flex flex-wrap items-baseline justify-between gap-3">
+            <h3 className="text-xl font-medium text-white md:text-2xl" style={display}>Selected software projects</h3>
+            <span className="text-[11px] uppercase tracking-[0.16em] text-white/45" style={mono}>Beyond security</span>
+          </div>
+          <div className="grid gap-px border border-white/10 bg-white/10 md:grid-cols-2">
+            {otherProjects.map((project) => (
+              <a
+                key={project.name}
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex h-full flex-col bg-[#0a1124] p-6 transition-colors duration-200 hover:bg-[#101c2b] sm:p-8"
+              >
+                <span className="text-[11px] uppercase tracking-wider text-emerald-400" style={mono}>{project.category}</span>
+                <div className="mt-4 flex items-start justify-between gap-4">
+                  <h4 className="text-2xl font-medium text-white" style={display}>{project.name}</h4>
+                  <ArrowUpRight className="shrink-0 text-white/50 transition-transform duration-200 motion-safe:group-hover:-translate-y-1 motion-safe:group-hover:translate-x-1" size={20} aria-hidden="true" />
+                </div>
+                <p className="mt-3 flex-1 text-sm leading-7 text-white/65">{project.summary}</p>
+                <span className="mt-6 text-xs text-white/45">{project.tools.join(" · ")}</span>
+                <span className="sr-only">(opens in a new tab)</span>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
