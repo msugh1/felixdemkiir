@@ -378,35 +378,25 @@ function About() {
 }
 
 function Skills() {
-  return (
-    <section className="relative bg-[#0a1124] border-t border-white/10">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-20 md:py-28">
-        <div className="grid md:grid-cols-12 gap-10 items-start">
-          <div className="md:col-span-4">
-            <div className="flex items-center gap-3 text-white/50 text-[11px] tracking-[0.25em] uppercase" style={mono}>
-              <span className="h-px w-8 bg-white/30" />
-              Skills
-            </div>
-            <h2 className="mt-6 text-white text-3xl md:text-4xl tracking-[-0.02em] font-medium" style={display}>
-              The toolkit, today.
-            </h2>
-          </div>
-          <div className="md:col-span-8 flex flex-wrap gap-2.5" style={body}>
-            {skills.map((s) => (
-              <span
-                key={s}
-                className="text-[13px] text-white/85 border border-white/15 hover:border-emerald-400 hover:bg-emerald-500 hover:text-[#04130d] transition-colors px-4 py-2.5 rounded-full"
-              >
-                {s}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+  const groups = [
+    { name: "Security operations", caption: "Detection & investigation", items: ["Wazuh", "SIEM investigations", "Wireshark", "Log analysis"] },
+    { name: "Security assessment", caption: "Discover & validate", items: ["Nmap", "OWASP ZAP", "Metasploit", "OpenVAS"] },
+    { name: "Cloud & identity", caption: "Secure infrastructure", items: ["AWS", "Security Groups", "WSO2", "Postman"] },
+    { name: "Networks & engineering", caption: "Architecture & tooling", items: ["Cisco Packet Tracer", "VLANs & ACLs", "Java", "Python"] },
+  ];
+  return <section id="skills" className="border-t border-white/10 bg-[#080f20]">
+    <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-10 md:py-32"><div className="grid gap-8 md:grid-cols-12"><div className="md:col-span-4"><span className="font-mono text-[11px] uppercase tracking-[.2em] text-emerald-400">06 — CAPABILITIES</span><h2 className="mt-7 text-4xl font-medium tracking-[-.05em] text-white md:text-5xl" style={display}>The working <em className="font-light text-emerald-400">toolkit.</em></h2></div><div className="grid gap-px border border-white/10 bg-white/10 sm:grid-cols-2 md:col-span-8">{groups.map((g,i)=><div key={g.name} className="bg-[#080f20] p-7 transition-colors hover:bg-[#122131]"><span className="font-mono text-[10px] tracking-widest text-emerald-400">0{i+1} / SPECIALISATION</span><h3 className="mt-6 text-xl font-medium text-white">{g.name}</h3><p className="mt-2 text-xs text-white/45">{g.caption}</p><div className="mt-6 flex flex-wrap gap-2">{g.items.map(t=><span key={t} className="border border-white/15 px-3 py-1.5 text-xs text-white/65">{t}</span>)}</div></div>)}</div></div></div>
+  </section>;
 }
-
+function Credentials(){
+  const list=[
+    ["Google Cybersecurity Professional Certificate","Google · 2026"],
+    ["Security, Compliance & Identity Fundamentals (SC-900)","Microsoft · 2026"],
+    ["3MTT Cybersecurity Certification","NITDA · 2025"],
+    ["Certified Phishing Prevention Specialist","Hack & Fix · 2025"],
+  ];
+  return <section className="border-t border-white/10 bg-[#0a1124]"><div className="mx-auto grid max-w-[1400px] gap-12 px-6 py-24 md:grid-cols-12 md:px-10 md:py-32"><div className="md:col-span-5"><span className="font-mono text-[11px] uppercase tracking-[.2em] text-emerald-400">07 — EDUCATION & CREDENTIALS</span><h2 className="mt-7 text-4xl font-medium tracking-[-.05em] text-white md:text-5xl" style={display}>Learning with <em className="font-light text-emerald-400">intention.</em></h2><p className="mt-7 leading-8 text-white/60">BSc Cybersecurity · Nigerian University of Technology and Management<br/>2024–2028 (expected)</p><a href="https://drive.google.com/drive/folders/1sYuzPEwZxeGa-XJ492gZE7sRWeKx7cQM?usp=sharing" target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300">View credentials <ArrowUpRight size={16}/></a></div><div className="border-t border-white/10 md:col-span-7">{list.map((c,i)=><div key={c[0]} className="grid grid-cols-[2rem_1fr] gap-4 border-b border-white/10 py-6"><span className="font-mono text-xs text-emerald-400">0{i+1}</span><div><h3 className="text-base font-medium text-white">{c[0]}</h3><p className="mt-2 text-xs text-white/50">{c[1]}</p></div></div>)}</div></div></section>;
+}
 function Contact() {
   const links = [
     { icon: Mail, label: "Email", value: "msughdemkiir@gmail.com", href: "mailto:msughdemkiir@gmail.com" },
@@ -483,6 +473,7 @@ export default function Home() {
       <Findings />
       <About />
       <Skills />
+      <Credentials />
       <Contact />
     </div>
   );
