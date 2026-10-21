@@ -175,11 +175,11 @@ function Hero() {
           </div>
           <div className="terminal-window-content">
             <div className="terminal-command"><span className="terminal-path">msugh@security</span><span className="terminal-tilde"> ~ </span><span className="terminal-dollar">$</span><span>whoami</span></div>
-            <p className="terminal-hero-overline">CYBERSECURITY STUDENT & BUILDER <span>/ LAGOS, NG</span></p>
-            <h1 id="hero-title">Securing systems.<br/><span>Building what’s next.</span><span className="terminal-cursor" aria-hidden="true">_</span></h1>
+            <p className="terminal-hero-overline">CYBERSECURITY / CLOUD & NETWORK DEFENCE <span>/ LAGOS, NG</span></p>
+            <h1 id="hero-title">Understanding risk.<br/><span>Strengthening systems.</span></h1>
             <div className="terminal-hero-description">
               <div className="terminal-command"><span className="terminal-path">msugh@security</span><span className="terminal-tilde"> ~ </span><span className="terminal-dollar">$</span><span>cat about.txt</span></div>
-              <p>I'm <strong>Msugh Felix Demkiir</strong> — a cybersecurity student working across cloud security, threat analysis, network defence, and the engineering behind resilient digital systems.</p>
+              <p>I'm <strong>Msugh Felix Demkiir</strong>, a cybersecurity student at the Nigerian University of Technology and Management. My work spans security monitoring, network assessment, cloud infrastructure, and API security. Through hands-on projects, technical investigations, and industry experience, I focus on identifying risks and applying practical security controls.</p>
             </div>
             <div className="terminal-hero-actions"><a href="#work" className="terminal-primary-link">[ Explore my work <ArrowUpRight size={16}/> ]</a><a href="https://drive.google.com/file/d/119fkAt46DgATxfIaGVOlPkx-4DCrxyb-/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="terminal-secondary-link">[ View résumé <ArrowRight size={15}/> ]</a></div>
             <div className="terminal-stats" aria-label="Portfolio highlights">
