@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { ArrowRight, ArrowUpRight, Mail, Github, Linkedin, Shield, Cloud, Code2, Menu, X } from "lucide-react";
-import heroImage from "../../imports/WhatsApp_Image_2026-05-21_at_6.09.28_PM-Photoroom-2.png";
+import heroImage from "../../imports/felix-demkiir-portrait.webp";
 import CareerHighlights from "../components/CareerHighlights";
 import Aurora from "../components/Aurora";
 
