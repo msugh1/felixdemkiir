@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { ArrowRight, ArrowUpRight, Mail, Github, Linkedin, Shield, Cloud, Code2, Menu, X } from "lucide-react";
-import heroImage from "../../imports/felix-demkiir-portrait.webp";
 import CareerHighlights from "../components/CareerHighlights";
-import Aurora from "../components/Aurora";
 
-const display = { fontFamily: '"Space Grotesk", Inter, ui-sans-serif, system-ui' };
-const body = { fontFamily: 'Inter, ui-sans-serif, system-ui' };
+const display = { fontFamily: '"JetBrains Mono", ui-monospace, monospace' };
+const body = { fontFamily: '"IBM Plex Mono", ui-monospace, monospace' };
 const mono = { fontFamily: '"JetBrains Mono", ui-monospace, monospace' };
 
-const HERO_IMAGE = heroImage;
 
 const projects = [
   {
@@ -144,111 +141,57 @@ const navLinks = [
 ];
 
 function Nav() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "backdrop-blur-xl bg-[#0a1124]/60 border-b border-white/10"
-          : "bg-transparent border-b border-transparent"
-      }`}
-    >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-3 group" style={display}>
-          <span className="inline-flex h-7 w-7 items-center justify-center border border-white/30 text-white text-[11px] tracking-widest" style={mono}>
-            FD
-          </span>
-          <span className="text-white tracking-tight text-[15px] font-medium">
-            Felix Demkiir
-          </span>
+    <header className="terminal-nav">
+      <div className="terminal-nav-inner">
+        <a href="#top" className="terminal-brand" aria-label="Felix Demkiir - homepage">
+          <span className="terminal-brand-prompt" aria-hidden="true">~/</span>
+          <span>felix<span className="terminal-brand-muted">@</span>security</span>
+          <span className="terminal-brand-caret" aria-hidden="true">_</span>
         </a>
-
-        <nav className="hidden md:flex items-center gap-1" style={body}>
-          {navLinks.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              className="px-4 py-2 text-[13px] text-white/70 hover:text-white transition-colors"
-            >
-              {l.label}
-            </a>
-          ))}
-          <a
-            href="https://drive.google.com/file/d/119fkAt46DgATxfIaGVOlPkx-4DCrxyb-/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-3 inline-flex items-center gap-2 border border-white/20 hover:border-white px-4 py-2 text-[13px] text-white transition-colors"
-          >
-            View CV <ArrowUpRight className="w-3.5 h-3.5" />
-          </a>
+        <nav aria-label="Portfolio navigation" className="terminal-desktop-links">
+          {navLinks.map((l) => <a key={l.href} href={l.href}><span aria-hidden="true">./</span>{l.label.toLowerCase()}</a>)}
         </nav>
-
-        <button
-          className="md:hidden text-white p-2 -mr-2"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
-      </div>
-
-      {open && (
-        <div className="md:hidden border-t border-white/10 bg-[#0a1124]/90 backdrop-blur-xl" style={body}>
-          <div className="px-6 py-4 flex flex-col gap-1">
-            {navLinks.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="py-3 text-sm text-white/80 hover:text-white border-b border-white/5"
-              >
-                {l.label}
-              </a>
-            ))}
-          </div>
+        <div className="terminal-nav-actions">
+          <a className="terminal-resume" href="https://drive.google.com/file/d/119fkAt46DgATxfIaGVOlPkx-4DCrxyb-/view?usp=sharing" target="_blank" rel="noopener noreferrer">resume.pdf <ArrowUpRight size={14}/></a>
+          <button type="button" className="terminal-menu-button" aria-expanded={open} aria-label={open ? "Close navigation" : "Open navigation"} onClick={() => setOpen(v => !v)}>{open ? <X size={20}/> : <Menu size={20}/>}</button>
         </div>
-      )}
+      </div>
+      {open && <nav className="terminal-mobile-links" aria-label="Mobile navigation">{navLinks.map(l=><a key={l.href} href={l.href} onClick={()=>setOpen(false)}><span>$ cd </span>{l.label.toLowerCase()}</a>)}<a href="https://drive.google.com/file/d/119fkAt46DgATxfIaGVOlPkx-4DCrxyb-/view?usp=sharing" target="_blank" rel="noopener noreferrer" onClick={()=>setOpen(false)}>$ open resume.pdf</a></nav>}
     </header>
   );
 }
 
 function Hero() {
-  const [reduced, setReduced] = useState(true);
-  useEffect(() => {
-    const q = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setReduced(q.matches);
-    update(); q.addEventListener?.("change", update);
-    return () => q.removeEventListener?.("change", update);
-  }, []);
   return (
-    <section id="top" className="relative min-h-[92vh] overflow-hidden bg-[#0a1124] flex flex-col border-b border-emerald-500/20">
-      <div className="pointer-events-none absolute inset-0 opacity-[0.16]" aria-hidden="true" style={{backgroundImage:"linear-gradient(rgba(16,185,129,.18) 1px, transparent 1px),linear-gradient(90deg,rgba(16,185,129,.18) 1px,transparent 1px)",backgroundSize:"64px 64px"}} />
-      {!reduced && <div className="pointer-events-none absolute inset-0 opacity-50 [mask-image:linear-gradient(to_bottom,black,transparent_95%)]" aria-hidden="true">
-        <Aurora colorStops={["#0a1124","#0d5b47","#1a473e","#0a1124"]} amplitude={0.45} blend={0.65} speed={0.3} opacity={0.6} brightness={0.6} dpr={1} mouseInteraction={false} />
-      </div>}
-      <div className="relative z-10 mx-auto grid w-full max-w-[1400px] flex-1 items-center gap-12 px-6 pb-14 pt-36 md:grid-cols-12 md:px-10 md:pb-20">
-        <div className="md:col-span-7">
-          <div className="mb-9 flex items-center gap-3 font-mono text-[10px] tracking-[.2em] text-emerald-400 uppercase"><span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_18px_#10b981]" /> CYBERSECURITY STUDENT & BUILDER <span className="hidden text-white/45 sm:inline">/ LAGOS, NG</span></div>
-          <h1 className="max-w-[850px] font-medium tracking-[-.065em] leading-[1.04] text-white text-[clamp(3.4rem,7vw,7.4rem)]" style={display}>Securing systems.<br/><span className="text-emerald-400">Building what’s next.</span></h1>
-          <p className="mt-8 max-w-xl text-base leading-8 text-white/65 md:text-lg" style={body}>I'm <strong className="font-medium text-white">Msugh Felix Demkiir</strong> — a cybersecurity student working across cloud security, threat analysis, network defence, and the engineering behind resilient digital systems.</p>
-          <div className="mt-9 flex flex-wrap gap-3"><a href="#work" className="inline-flex items-center gap-3 bg-emerald-500 px-6 py-3.5 text-sm font-semibold text-[#04130d] hover:bg-emerald-400">Explore my work <ArrowUpRight size={18}/></a><a href="https://drive.google.com/file/d/119fkAt46DgATxfIaGVOlPkx-4DCrxyb-/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 border border-white/30 px-6 py-3.5 text-sm text-white hover:border-emerald-400">View résumé <ArrowRight size={17}/></a></div>
-          <div className="mt-16 grid max-w-xl grid-cols-3 border-t border-white/15 pt-6"><div><strong className="block text-3xl text-white" style={display}>2026</strong><span className="mt-2 block text-[10px] uppercase tracking-wider text-white/40">Industry experience</span></div><div><strong className="block text-3xl text-white" style={display}>06</strong><span className="mt-2 block text-[10px] uppercase tracking-wider text-white/40">Security labs</span></div><div><strong className="block text-3xl text-white" style={display}>01</strong><span className="mt-2 block text-[10px] uppercase tracking-wider text-white/40">Initiative founded</span></div></div>
+    <section id="top" className="terminal-hero" aria-labelledby="hero-title">
+      <div className="terminal-hero-inner">
+        <div className="terminal-window">
+          <div className="terminal-window-bar">
+            <div className="terminal-dots" aria-hidden="true"><i/><i/><i/></div>
+            <span>msugh@security: ~/portfolio</span>
+            <span className="terminal-window-status">● online</span>
+          </div>
+          <div className="terminal-window-content">
+            <div className="terminal-command"><span className="terminal-path">msugh@security</span><span className="terminal-tilde"> ~ </span><span className="terminal-dollar">$</span><span>whoami</span></div>
+            <p className="terminal-hero-overline">CYBERSECURITY STUDENT & BUILDER <span>/ LAGOS, NG</span></p>
+            <h1 id="hero-title">Securing systems.<br/><span>Building what’s next.</span><span className="terminal-cursor" aria-hidden="true">_</span></h1>
+            <div className="terminal-hero-description">
+              <div className="terminal-command"><span className="terminal-path">msugh@security</span><span className="terminal-tilde"> ~ </span><span className="terminal-dollar">$</span><span>cat about.txt</span></div>
+              <p>I'm <strong>Msugh Felix Demkiir</strong> — a cybersecurity student working across cloud security, threat analysis, network defence, and the engineering behind resilient digital systems.</p>
+            </div>
+            <div className="terminal-hero-actions"><a href="#work" className="terminal-primary-link">[ Explore my work <ArrowUpRight size={16}/> ]</a><a href="https://drive.google.com/file/d/119fkAt46DgATxfIaGVOlPkx-4DCrxyb-/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="terminal-secondary-link">[ View résumé <ArrowRight size={15}/> ]</a></div>
+            <div className="terminal-stats" aria-label="Portfolio highlights">
+              <div><span>experience</span><strong>2026</strong><small>Industry experience</small></div>
+              <div><span>research</span><strong>06</strong><small>Security labs</small></div>
+              <div><span>initiatives</span><strong>01</strong><small>Initiative founded</small></div>
+            </div>
+            <div className="terminal-hero-lastline"><span className="terminal-path">msugh@security</span><span className="terminal-tilde"> ~ </span><span className="terminal-dollar">$</span><span className="terminal-inline-cursor" aria-hidden="true"/></div>
+          </div>
         </div>
-        <div className="relative hidden md:col-span-5 md:block">
-          <div className="relative overflow-hidden border border-emerald-400/25 bg-[#10261f]"><div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(16,185,129,.19),transparent_70%)]"/><img src={HERO_IMAGE} alt="Portrait of Felix Demkiir" className="relative z-10 mx-auto max-h-[660px] w-full object-contain object-bottom"/><div className="absolute inset-x-0 bottom-0 z-20 h-28 bg-gradient-to-t from-[#0a1124] to-transparent"/></div>
-          <div className="flex justify-between border border-t-0 border-white/15 bg-[#0a1124] p-4 font-mono text-[10px] uppercase tracking-[.16em] text-white/50"><span>IDENTITY / FELIX DEMKIIR</span><span>FD — 001</span></div>
-        </div>
+        <div className="terminal-hero-footer"><span>// SECURITY IS A PRACTICE, NOT A LABEL.</span><a href="#work">scroll_to_work <ArrowRight size={14}/></a></div>
       </div>
-      <div className="relative z-10 mx-auto flex w-full max-w-[1400px] items-center justify-between border-t border-white/10 px-6 py-5 font-mono text-[10px] tracking-[.16em] text-white/50 md:px-10"><span>SECURITY IS A PRACTICE, NOT A LABEL.</span><a href="#work" className="hover:text-emerald-400">SCROLL TO EXPLORE ↓</a></div>
     </section>
   );
 }
@@ -351,7 +294,7 @@ function Contact() {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0a1124] text-white antialiased selection:bg-emerald-500 selection:text-[#04130d]" style={body}>
+    <div className="terminal-site min-h-screen text-white antialiased" style={body}>
       <Nav />
       <Hero />
       <CareerHighlights />
