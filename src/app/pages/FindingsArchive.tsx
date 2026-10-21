@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { ArrowLeft, ArrowUpRight, Menu, X } from "lucide-react";
 
-const display = { fontFamily: '"Space Grotesk", Inter, ui-sans-serif, system-ui' };
-const body = { fontFamily: 'Inter, ui-sans-serif, system-ui' };
+const display = { fontFamily: '"JetBrains Mono", ui-monospace, monospace' };
+const body = { fontFamily: '"IBM Plex Mono", ui-monospace, monospace' };
 const mono = { fontFamily: '"JetBrains Mono", ui-monospace, monospace' };
 
 const allFindings = [
@@ -75,7 +75,7 @@ function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-[#0a1124]/80 border-b border-white/10">
+    <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-[#080c0b]/80 border-b border-white/10">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group" style={display}>
           <span className="inline-flex h-7 w-7 items-center justify-center border border-white/30 text-white text-[11px] tracking-widest" style={mono}>
@@ -142,7 +142,7 @@ export default function FindingsArchive() {
     : allFindings.filter((f) => f.kind === activeKind);
 
   return (
-    <div className="min-h-screen bg-[#0a1124] text-white antialiased selection:bg-emerald-500 selection:text-[#04130d]" style={body}>
+    <div className="terminal-archive min-h-screen bg-[#080c0b] text-white antialiased selection:bg-emerald-500 selection:text-[#04130d]" style={body}>
       <Nav />
 
       {/* Header */}
@@ -202,7 +202,7 @@ export default function FindingsArchive() {
             {filtered.map((f) => (
               <article
                 key={f.title}
-                className="group bg-[#0a1124] p-8 md:p-10 hover:bg-white/[0.03] transition-colors flex flex-col"
+                className="group bg-[#0a1124] p-8 md:p-10 hover:bg-[#101a13] transition-colors flex flex-col"
               >
                 <div className="flex items-center justify-between text-[11px] tracking-[0.2em] uppercase text-white/50" style={mono}>
                   <span className="border border-white/20 px-2.5 py-1">{f.kind}</span>
