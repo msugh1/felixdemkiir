@@ -19,7 +19,7 @@ const experience = [
 ];
 
 const mono = { fontFamily: '"JetBrains Mono", ui-monospace, monospace' };
-const display = { fontFamily: '"Space Grotesk", Inter, sans-serif' };
+const display = { fontFamily: '"JetBrains Mono", ui-monospace, monospace' };
 
 export default function CareerHighlights() {
   return (
@@ -39,8 +39,8 @@ export default function CareerHighlights() {
               </p>
             </div>
             <div className="md:col-span-8">
-              <article className="relative overflow-hidden border border-white/15 bg-white/[0.035] p-6 sm:p-9">
-                <div className="pointer-events-none absolute -right-16 -top-16 size-56 rounded-full bg-emerald-500/10 blur-3xl" aria-hidden="true" />
+              <article className="terminal-section-window relative overflow-hidden border border-white/15 bg-white/[0.035] p-6 sm:p-9">
+                <div className="hidden" aria-hidden="true" />
                 <div className="relative flex flex-col items-start justify-between gap-4 sm:flex-row">
                   <div>
                     <p className="text-[11px] uppercase tracking-[0.18em] text-emerald-400" style={mono}>Technology Intern · Cloud Security & Loan Teams</p>
@@ -102,7 +102,7 @@ export default function CareerHighlights() {
             </div>
           </div>
 
-          <article className="grid overflow-hidden border border-white/15 bg-[#0c1628] transition-colors duration-300 hover:border-emerald-400/40 lg:grid-cols-[1.05fr_0.95fr] motion-reduce:transition-none">
+          <article className="terminal-section-window grid overflow-hidden border border-white/15 bg-[#0c1628] transition-colors duration-300 hover:border-emerald-400/40 lg:grid-cols-[1.05fr_0.95fr] motion-reduce:transition-none">
             <div className="flex flex-col justify-between p-7 sm:p-10 lg:p-12">
               <div>
                 <span className="inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-emerald-400" style={mono}>
@@ -133,7 +133,7 @@ export default function CareerHighlights() {
               </a>
             </div>
 
-            <div className="relative overflow-hidden border-t border-white/10 bg-[#0e1b29] p-7 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
+            <div className="terminal-panel relative overflow-hidden border-t border-white/10 bg-[#0e1b29] p-7 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 opacity-40"
