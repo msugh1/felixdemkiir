@@ -3,7 +3,7 @@ import { DocNav, DocFooter, SectionDivider, SectionNumber, RiskBadge, CodeBlock,
 
 export default function MetasploitableDocs() {
   return (
-    <div className="min-h-screen bg-white text-gray-900" style={body}>
+    <div className="terminal-document min-h-screen bg-[#080c0b] text-[#e2ece3]" style={body}>
       <DocNav />
 
       {/* Hero */}
