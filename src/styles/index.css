@@ -80,3 +80,25 @@ body { background:var(--term-bg); }
 @media(max-width:930px) { .terminal-desktop-links,.terminal-resume { display:none; }.terminal-menu-button{display:block;}.terminal-mobile-links{display:grid;padding:10px 26px 21px;gap:0;border-top:1px solid var(--term-line);}.terminal-mobile-links a{padding:13px 4px;color:#d5e4d7;border-bottom:1px solid var(--term-line);font-size:13px;}.terminal-mobile-links a span{color:var(--term-green);} }
 @media(max-width:640px) { .terminal-nav-inner{padding:0 20px;}.terminal-hero{padding:28px 14px 25px;min-height:auto;}.terminal-window-content{padding:27px 20px;}.terminal-hero-overline{margin-top:28px;}.terminal-hero-overline span{display:block;margin:9px 0 0;}.terminal-stats{grid-template-columns:1fr;margin-top:38px;}.terminal-stats>div{display:grid;grid-template-columns:1fr 60px;gap:4px;}.terminal-stats small{grid-column:1 / -1;}.terminal-hero-footer{font-size:9px;}.terminal-hero h1{font-size:clamp(2.25rem,9.2vw,4rem)} }
 @media(prefers-reduced-motion:reduce){.terminal-inline-cursor{animation:none;}}
+
+/* Terminal treatment for research archive and document readers */
+.terminal-archive { background:#080c0b;color:#e2ece3;font-family:"IBM Plex Mono",monospace; }
+.terminal-archive h1,.terminal-archive h2,.terminal-archive h3,.terminal-document h1,.terminal-document h2,.terminal-document h3 { font-family:"JetBrains Mono",monospace !important;letter-spacing:-.045em !important; }
+.terminal-archive header,.terminal-archive article,.terminal-archive section,.terminal-archive footer { background-color:#080c0b !important;border-color:#26362c !important; }
+.terminal-archive .bg-emerald-500 { background:#8df5a2 !important; }
+.terminal-archive .text-emerald-400 { color:#8df5a2 !important; }
+.terminal-document { font-family:"IBM Plex Mono",monospace !important;background:#080c0b !important;color:#e2ece3 !important; }
+.terminal-document header,.terminal-document section,.terminal-document footer { background-color:#080c0b !important;border-color:#26362c !important; }
+.terminal-document .bg-white,.terminal-document .bg-gray-50,.terminal-document .bg-gray-100 { background-color:#0e1411 !important; }
+.terminal-document .text-gray-900,.terminal-document .text-gray-800 { color:#e2ece3 !important; }
+.terminal-document .text-gray-700,.terminal-document .text-gray-600 { color:#b2c2b5 !important; }
+.terminal-document .text-gray-500,.terminal-document .text-gray-400 { color:#90a596 !important; }
+.terminal-document .border-gray-200,.terminal-document .border-gray-100,.terminal-document .border-gray-300 { border-color:#26362c !important; }
+.terminal-document .bg-gray-900 { background-color:#234631 !important; }
+.terminal-document .text-emerald-600,.terminal-document .text-emerald-500,.terminal-document .text-emerald-400 { color:#8df5a2 !important; }
+.terminal-document .bg-gray-950 { background-color:#030804 !important;border:1px solid #26362c; }
+.terminal-document pre,.terminal-document code { font-family:"JetBrains Mono",monospace !important; }
+.terminal-document a:hover { color:#8df5a2; }
+.terminal-section-window { border-color:#34513a !important;background-color:#0e1411 !important; }
+.terminal-panel { background-color:#101a13 !important; }
+.terminal-site .terminal-section-window .group:hover { background-color:#142017 !important; }
